@@ -72,34 +72,34 @@ async def megadl(bot, message):
         return
       else:
         logs_msg = await message.forward(Config.LOG_CHANNEL)
-        trace_msg = await logs_msg.reply_text(f"#MegaDL : Download Started! \n\n{user_info} \nJoin @AsmSafone For Updates!")
-        download_msg = await message.reply_text(f"**Trying To Download ...** \n\nThis Process May Take Some Time 🤷‍♂️!", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Cancel Mega DL", callback_data="cancel")]]), reply_to_message_id=message.message_id)
+        trace_msg = await logs_msg.reply_text(f"#MegaDL : Download Started! \n\n{user_info} \n** 💥Powered By ꧁❏รเlєภt ๔є๓๏ภ❏꧂ !!**")
+        download_msg = await message.reply_text(f"** 📥Trying To Download ...** \n\nThis Process May Take Some Time 🤷‍♂️!", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📮Cancel📮", callback_data="cancel")]]), reply_to_message_id=message.message_id)
         loop = get_running_loop()
         await loop.run_in_executor(None, partial(DownloadMegaLink, url, alreadylol, download_msg))
         getfiles = [f for f in os.listdir(alreadylol) if isfile(join(alreadylol, f))]
         files = getfiles[0]
         magapylol = f"{alreadylol}/{files}"
-        await download_msg.edit(f"**Downloaded Successfully 😉!**")
-        await trace_msg.edit(f"#MegaDL : Download Done! \n\n{user_info} \nJoin @AsmSafone For Updates!")
+        await download_msg.edit(f"**🗂 Downloaded Successfully 😉!**")
+        await trace_msg.edit(f"#MegaDL : Download Done! \n\n{user_info} \n** 💥Powered By ꧁❏รเlєภt ๔є๓๏ภ❏꧂ !!**")
     except Exception as e:
         await download_msg.edit(f"**Error:** `{e}`")
-        await trace_msg.edit(f"#MegaDL : Download Failed! \nReason: `{e}` \n\n{user_info} \nJoin @AsmSafone For Updates!")
+        await trace_msg.edit(f"#MegaDL : Download Failed! \nReason: `{e}` \n\n{user_info} \n** 💥Powered By ꧁❏รเlєภt ๔є๓๏ภ❏꧂ !!**")
         shutil.rmtree(basedir + "/" + userpath)
         return
     lmaocheckdis = os.stat(alreadylol).st_size
     readablefilesize = size(lmaocheckdis) # Convert Bytes into readable size
     if lmaocheckdis > TG_MAX_FILE_SIZE:
-        await download_msg.edit(f"**Detected File Size:** `{readablefilesize}` \n**Accepted File Size:** `2.0 GB` \n\nOops! File Is Too Large To Send In Telegram 🤒!")
-        await trace_msg.edit(f"#MegaDL : Upload Failed! \nReason: `Oops! File is Too Large.` \n\n{user_info} \nJoin @AsmSafone For Updates!")
+        await download_msg.edit(f"**🎯 Detected File Size:** `{readablefilesize}` \n**⚠️Accepted File Size⚠️:** `2.0 GB` \n\nOops! File Is Too Large To Send In Telegram 🤒!")
+        await trace_msg.edit(f"#MegaDL : Upload Failed! \nReason: `Oops! File is Too Large.` \n\n{user_info} \n** 💥Powered By ꧁❏รเlєภt ๔є๓๏ภ❏꧂ !!**")
         shutil.rmtree(basedir + "/" + userpath)
         return
     else:
         start_time = time.time()
         guessedfilemime = filetype.guess(f"{magapylol}") # Detecting file type
         if not guessedfilemime.mime:
-            await download_msg.edit("**Trying To Upload ...** \n**Can't Get File Type, Sending as Document!")
-            safone = await message.reply_document(magapylol, progress=progress_for_pyrogram, progress_args=("**Uploading Wait ...** \n", download_msg, start_time), reply_to_message_id=message.message_id)
-            await safone.reply_text(f"**Join @AsmSafone! \nThanks For Using Me 😘!**", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🙌 SHARE 🙌", url=f"https://t.me/share/url?url=**Hey%20Guys!%20%20Check%20Out%20@AsmSafone's%20Bots%20Channel.%20%20Share%20His%20Bots%20And%20Support%20Him%20%F0%9F%98%89!%20%20Here%20Is%20The%20Bots%20List%20:-%20https://t.me/AsmSafone/173**")]]), reply_to_message_id=safone.message_id)
+            await download_msg.edit("**📤Trying To Upload ...** \n**Can't Get File Type, Sending as Document!")
+            safone = await message.reply_document(magapylol, progress=progress_for_pyrogram, progress_args=("**📤Uploading Wait ...** \n", download_msg, start_time), reply_to_message_id=message.message_id)
+            await safone.reply_text(f"**Join @AsmSafone! \nThanks For Using Me 😘!**", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📬 SHARE 📬", url=f"https://t.me/share/url?url=**Hey%20Guys!%20%20Check%20Out%20@AsmSafone's%20Bots%20Channel.%20%20Share%20His%20Bots%20And%20Support%20Him%20%F0%9F%98%89!%20%20Here%20Is%20The%20Bots%20List%20:-%20https://t.me/AsmSafone/173**")]]), reply_to_message_id=safone.message_id)
             await download_msg.delete()
             await trace_msg.edit(f"#MegaDL : Upload Done! \n\n{user_info} \nJoin @AsmSafone For Updates!")
             shutil.rmtree(basedir + "/" + userpath)
