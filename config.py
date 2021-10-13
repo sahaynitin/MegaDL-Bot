@@ -10,7 +10,7 @@ class Config:
     BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
     DOWNLOAD_LOCATION = "./DOWNLOADS"
     TG_MAX_SIZE = 2040108421
-    OWNER_ID = int(os.environ.get("OWNER_ID", 1316963576))
+    OWNER_ID = int(os.environ.get("OWNER_ID", 13jjkjj))
     LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL"))
     UPDATES_CHANNEL = os.environ.get("UPDATES_CHANNEL", None)
 
@@ -37,10 +37,10 @@ This Bot Can Download Files & Videos From Mega Links & Upload To Telegram. Just 
 """
 
   START_TEXT = """
-👋🏻 **Hi** {user_mention},
+👋🏻 **Hey** {user_mention},
 
-I'm **{bot_name}**
+Welcome to **{bot_name}**\n\n
 I Can Download Files & Videos From Mega.nz Links & Upload To Telegram. Please Check Help To Learn More 😉!
 
-**Maintained By: {bot_owner}**❤️!
+**Made with 💕 By @Tellybots_4u
 """
