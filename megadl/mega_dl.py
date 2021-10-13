@@ -80,10 +80,10 @@ async def megadl(bot, message):
         files = getfiles[0]
         magapylol = f"{alreadylol}/{files}"
         await download_msg.edit(f"**🗂 Downloaded Successfully 😉!**")
-        await trace_msg.edit(f"#MegaDL : Download Done! \n\n{user_info} \n** 💥Powered By ꧁❏รเlєภt ๔є๓๏ภ❏꧂ !!**")
+        await trace_msg.edit(f"#MegaDL : Download Done! \n\n{user_info} \n** 🚦Powered By Tellybots_4u🚦 !!**")
     except Exception as e:
         await download_msg.edit(f"**Error:** `{e}`")
-        await trace_msg.edit(f"#MegaDL : Download Failed! \nReason: `{e}` \n\n{user_info} \n** 💥Powered By ꧁❏รเlєภt ๔є๓๏ภ❏꧂ !!**")
+        await trace_msg.edit(f"#MegaDL : Download Failed! \nReason: `{e}` \n\n{user_info} \n** 🚦Powered by TellyBots_4u🚦 !!**")
         shutil.rmtree(basedir + "/" + userpath)
         return
     lmaocheckdis = os.stat(alreadylol).st_size
@@ -111,14 +111,14 @@ async def megadl(bot, message):
             safone = await message.reply_animation(magapylol, progress=progress_for_pyrogram, progress_args=("**📤Uploading Wait ...** \n", download_msg, start_time), reply_to_message_id=message.message_id)
             await safone.reply_text(f"**Thanks For Using Me 😘!**", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("☠ MASTER ☠", url=f"https://t.me/MYSTERYSD3")]]), reply_to_message_id=safone.message_id)
             await download_msg.delete()
-            await trace_msg.edit(f"#MegaDL : 🥳Upload Done🥳! \n\n{user_info} ** 💥Powered By ꧁❏รเlєภt ๔є๓๏ภ❏꧂ !!**")
+            await trace_msg.edit(f"#MegaDL : 🥳Upload Done🥳! \n\n{user_info} ** 🚦Powered By Tellybots_4u !!**")
         # Checking if it's a image
         elif "image" in filemimespotted:
             await download_msg.edit("**📤Trying To Upload ...**")
             safone = await message.reply_photo(magapylol, progress=progress_for_pyrogram, progress_args=("**📤Uploading Wait ...** \n", download_msg, start_time), reply_to_message_id=message.message_id)
             await safone.reply_text(f"**Thanks For Using Me 😘!**", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("☠ MASTER ☠", url=f"https://t.me/MYSTERYSD3")]]), reply_to_message_id=safone.message_id)
             await download_msg.delete()
-            await trace_msg.edit(f"#MegaDL : 🥳Upload Done🥳! \n\n{user_info} ** 💥Powered By ꧁❏รเlєภt ๔є๓๏ภ❏꧂ !!**")
+            await trace_msg.edit(f"#MegaDL : 🥳Upload Done🥳! \n\n{user_info} ** 💥Powered By Tellybots_4u !!**")
         # Checking if it's a video
         elif "video" in filemimespotted:
             await download_msg.edit("**📤Trying To Upload ...**")
